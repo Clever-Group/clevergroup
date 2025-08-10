@@ -61,21 +61,20 @@ export const Landingpage = () => {
       </div>
 
       {/* Second Section */}
-      <Card className="w-full min-h-screen flex items-center justify-between p-4 sm:p-6 lg:p-8 bg-[linear-gradient(180deg,rgba(21,23,28,1)_0%,rgba(35,123,255,1)_40%,rgba(255,255,255,1)_100%)] border-none">
-        <CardContent className="flex flex-col w-full max-w-7xl items-center justify-center gap-6 lg:gap-8 p-0">
+      <Card className="w-full min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[linear-gradient(180deg,rgba(21,23,28,1)_0%,rgba(35,123,255,1)_40%,rgba(255,255,255,1)_100%)] border-none">
+        <CardContent className="flex flex-col w-full max-w-7xl gap-10 lg:flex-row lg:gap-20 p-0">
           
-          <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-6 lg:gap-8">
-            <div className="w-full lg:w-1/2 font-sans font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center lg:text-justify tracking-[0] leading-relaxed">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy
-              text ever since the 1500s, when an unknown printer took a galley
-              of type and scrambled it to make a type specimen book.
-            </div>
-
-            <div className="w-full lg:w-1/2 text-center lg:text-right [text-shadow:0px_0px_110px_#ffffff] font-sans font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-[0] leading-tight">
-              CRIAMOS SOLUÇÕES DIGITAIS QUE IMPULSIONAM NEGÓCIOS
-            </div>
+          <div className="w-full lg:w-1/2 font-sans font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center lg:text-left tracking-[0] leading-relaxed">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy
+            text ever since the 1500s, when an unknown printer took a galley
+            of type and scrambled it to make a type specimen book.
           </div>
+
+          <div className="w-full lg:w-1/2 text-center lg:text-right [text-shadow:0px_0px_110px_#ffffff] font-sans font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-[0] leading-tight">
+            CRIAMOS SOLUÇÕES DIGITAIS QUE IMPULSIONAM NEGÓCIOS
+          </div>
+
         </CardContent>
       </Card>
 
