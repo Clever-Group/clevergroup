@@ -1,11 +1,10 @@
-import React from "react";
-import { FaInstagram, FaArrowRight, FaChevronRight } from "react-icons/fa";
+import { Fa1 } from "react-icons/fa6";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Textarea } from "../../components/ui/textarea";
 
-export const Landingpage = (): JSX.Element => {
+export const Landingpage = () => {
   return (
     <div className="bg-[#15171c] min-h-screen w-full">
       {/* Hero Section */}
@@ -17,9 +16,9 @@ export const Landingpage = (): JSX.Element => {
               PARA O SEU SUCESSO.
             </div>
 
-            <Button className="w-full sm:w-auto max-w-[303px] h-[50px] sm:h-[60px] bg-[#172f4e] rounded-[10px] font-extrabold text-[#237bff] text-sm sm:text-base flex items-center justify-center gap-2">
+            <Button className="w-full sm:w-auto max-w-[303px] h-[50px] sm:h-[60px] bg-[#172f4e] font-extrabold text-[#237bff] text-sm sm:text-base flex items-center justify-center gap-2">
               Venha nos conhecer
-              <FaChevronRight className="w-3 h-3" />
+              <Fa1 className="w-3 h-3" />
             </Button>
           </CardContent>
         </Card>
@@ -30,7 +29,7 @@ export const Landingpage = (): JSX.Element => {
             <img
               className="w-12 h-10 sm:w-[65px] sm:h-[55px]"
               alt="Logo clevergroup"
-              src="/logo-clevergroup.svg"
+              src="../src/img/logo-clevergroup.svg"
             />
 
             <div className="hidden md:flex items-center gap-4 lg:gap-6">
@@ -56,30 +55,26 @@ export const Landingpage = (): JSX.Element => {
               </Button>
             </div>
 
-            <FaInstagram className="w-4 h-4 text-white hover:text-[#237bff] transition-colors cursor-pointer" />
+            <Fa1 className="w-4 h-4 text-white hover:text-[#237bff] transition-colors cursor-pointer" />
           </div>
         </header>
       </div>
 
       {/* Second Section */}
       <Card className="w-full min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[linear-gradient(180deg,rgba(21,23,28,1)_0%,rgba(35,123,255,1)_40%,rgba(255,255,255,1)_100%)] border-none">
-        <CardContent className="flex flex-col w-full max-w-7xl items-center justify-center gap-6 lg:gap-8 p-0">
-          <div className="w-full text-center font-sans font-extrabold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-[0] leading-tight">
-            CRIAMOS SOLUÇÕES DIGITAIS QUE
+        <CardContent className="flex flex-col w-full max-w-7xl gap-10 lg:flex-row lg:gap-20 p-0">
+          
+          <div className="w-full lg:w-1/2 font-sans font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center lg:text-left tracking-[0] leading-relaxed">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy
+            text ever since the 1500s, when an unknown printer took a galley
+            of type and scrambled it to make a type specimen book.
           </div>
 
-          <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-6 lg:gap-8">
-            <div className="w-full lg:w-1/2 font-sans font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center lg:text-justify tracking-[0] leading-relaxed">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy
-              text ever since the 1500s, when an unknown printer took a galley
-              of type and scrambled it to make a type specimen book.
-            </div>
-
-            <div className="w-full lg:w-1/2 text-center lg:text-right [text-shadow:0px_0px_110px_#ffffff] font-sans font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-[0] leading-tight">
-              IMPULSIONAM NEGÓCIOS
-            </div>
+          <div className="w-full lg:w-1/2 text-center lg:text-right [text-shadow:0px_0px_110px_#ffffff] font-sans font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-[0] leading-tight">
+            CRIAMOS SOLUÇÕES DIGITAIS QUE IMPULSIONAM NEGÓCIOS
           </div>
+
         </CardContent>
       </Card>
 
@@ -118,7 +113,7 @@ export const Landingpage = (): JSX.Element => {
 
             <Button className="w-full h-12 lg:h-[60px] bg-[#172f4e] rounded-[10px] text-white font-normal text-sm lg:text-base flex items-center justify-center gap-2 hover:bg-[#1a3555] transition-colors">
               Enviar formulário
-              <FaArrowRight className="w-3 h-3" />
+              <Fa1 className="w-3 h-3" />
             </Button>
           </div>
         </CardContent>
@@ -134,7 +129,7 @@ export const Landingpage = (): JSX.Element => {
           <img
             className="w-12 h-10 sm:w-[65px] sm:h-[55px]"
             alt="Logo clevergroup"
-            src="/logo-clevergroup.svg"
+            src="../src/img/logo-clevergroup.svg"
           />
 
           <div className="flex flex-col items-center md:items-end gap-3 lg:gap-4">
@@ -147,7 +142,7 @@ export const Landingpage = (): JSX.Element => {
             </div>
 
             <div className="flex items-center justify-center gap-2">
-              <FaInstagram className="w-4 h-4 text-white hover:text-[#237bff] transition-colors cursor-pointer" />
+              <Fa1 className="w-4 h-4 text-white hover:text-[#237bff] transition-colors cursor-pointer" />
               <div className="font-sans font-normal text-white text-sm lg:text-base tracking-[0] leading-normal">
                 clevergroup_
               </div>
