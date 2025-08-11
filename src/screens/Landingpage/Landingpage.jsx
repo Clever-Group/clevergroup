@@ -3,6 +3,7 @@ import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Textarea } from "../../components/ui/textarea";
+import logo from "../../img/logo-clevergroup.svg";
 
 export const Landingpage = () => {
   return (
@@ -29,7 +30,7 @@ export const Landingpage = () => {
             <img
               className="w-12 h-10 sm:w-[65px] sm:h-[55px]"
               alt="Logo clevergroup"
-              src="../src/img/logo-clevergroup.svg"
+              src={logo}
             />
 
             <div className="hidden md:flex items-center gap-4 lg:gap-6">
@@ -129,7 +130,7 @@ export const Landingpage = () => {
           <img
             className="w-12 h-10 sm:w-[65px] sm:h-[55px]"
             alt="Logo clevergroup"
-            src="../src/img/logo-clevergroup.svg"
+            src={logo}
           />
 
           <div className="flex flex-col items-center md:items-end gap-3 lg:gap-4">
