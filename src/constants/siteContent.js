@@ -117,7 +117,7 @@ export const WHY_CONTENT = {
 export const CONTACT_FORM_CONTENT = {
   title: "Nos conte sua ideia, seu negócio começa aqui.",
   paragraph:
-    "Preencha o formulário com um pouco sobre o seu negócio e o que você precisa — respondemos em até um dia útil pra combinar os próximos passos.",
+    "Preencha o formulário com um pouco sobre o seu negócio e o que você precisa.",
   fields: {
     name: { label: "Nome completo", placeholder: "Como podemos te chamar?" },
     email: { label: "E-mail", placeholder: "voce@empresa.com" },
