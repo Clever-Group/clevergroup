@@ -1,5 +1,6 @@
 import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
+import { motion } from "motion/react";
 import * as React from "react";
 import { cn } from "../../lib/utils";
 
@@ -18,6 +19,10 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        glass:
+          "border border-white/25 bg-white/10 text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl backdrop-saturate-150 hover:bg-white/20",
+        "glass-outline":
+          "border border-white/30 bg-transparent text-white hover:bg-white/10",
       },
       size: {
         default: "h-9 px-4 py-2",
@@ -53,4 +58,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+// Versão animável (fade/slide de entrada, whileHover/whileTap) sem
+// precisar reimplementar as variantes em cada tela que usa motion.
+const MotionButton = motion.create(Button);
+
+export { Button, buttonVariants, MotionButton };

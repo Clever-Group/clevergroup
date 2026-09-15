@@ -13,6 +13,18 @@
 
 @layer base {
   :root {
+    /* Paleta de marca CleverGroup. Antes esses hex ficavam repetidos como
+       valores soltos (bg-[#15171c], text-[#237bff]...) em dezenas de
+       lugares no JSX; centralizar aqui é a única fonte de verdade.
+       Formato "H S% L%" (sem hsl() em volta) — igual ao --background e
+       companhia logo abaixo — porque é isso que deixa o Tailwind aplicar
+       opacidade (bg-brand-dark/70) via hsl(var(--x) / <alpha-value>) no
+       tailwind.config.js. Com a cor em hex puro isso não funciona. */
+    --brand-dark: 220 18% 10%; /* #15181e */
+    --brand-blue: 216 100% 57%; /* #237bff */
+    --brand-navy: 214 54% 20%; /* #172f4e */
+    --brand-gray: 220 2% 68%; /* #adaeb0 */
+
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
 
@@ -82,6 +94,10 @@
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
