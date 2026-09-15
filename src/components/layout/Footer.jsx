@@ -53,12 +53,6 @@ export const Footer = () => (
           <a href={`mailto:${CONTACT_INFO.email}`} className={LINK_CLASSES}>
             {CONTACT_INFO.email}
           </a>
-          <a
-            href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
-            className={LINK_CLASSES}
-          >
-            {CONTACT_INFO.phone}
-          </a>
         </div>
       </div>
 

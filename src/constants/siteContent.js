@@ -3,14 +3,14 @@
 // link exigia caçar a string certa em Landingpage.jsx.
 
 export const NAV_LINKS = [
+  { label: "Como trabalhamos", href: "#processo" },
   { label: "Sobre", href: "#sobre" },
+  { label: "Diferenciais", href: "#diferenciais" },
   { label: "Contato", href: "#contato" },
-  { label: "Suporte", href: "#contato" },
 ];
 
 export const CONTACT_INFO = {
   email: "clevergroupcontato@gmail.com",
-  phone: "(00) 00000-0000",
   instagram: "clevergroup_",
   instagramUrl: "https://instagram.com/clevergroup_",
 };

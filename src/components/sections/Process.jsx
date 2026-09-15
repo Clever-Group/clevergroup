@@ -18,7 +18,10 @@ export const Process = () => {
   });
 
   return (
-    <section className="w-full bg-brand-dark px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+    <section
+      id="processo"
+      className="w-full scroll-mt-24 bg-brand-dark px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+    >
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

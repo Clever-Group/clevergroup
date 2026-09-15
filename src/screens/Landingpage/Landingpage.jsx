@@ -20,6 +20,16 @@ export const Landingpage = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Trava o scroll enquanto a cortina de loading está em cena — o site já
+  // está montado por baixo (ver comentário abaixo), então sem isso dá pra
+  // rolar a página escondida atrás do loader.
+  useEffect(() => {
+    document.body.style.overflow = isLoading ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLoading]);
+
   return (
     // reducedMotion="user" faz o Motion checar o prefers-reduced-motion do
     // sistema automaticamente — quem desativou animação no SO não anima aqui.

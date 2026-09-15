@@ -31,7 +31,10 @@ const RadarGraphic = () => (
 );
 
 export const Why = () => (
-  <section className="w-full bg-brand-dark px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+  <section
+    id="diferenciais"
+    className="w-full scroll-mt-24 bg-brand-dark px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+  >
     <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 lg:flex-row lg:justify-between lg:gap-10">
       <motion.div
         initial={{ opacity: 0, y: 28 }}
