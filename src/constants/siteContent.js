@@ -25,8 +25,7 @@ export const HERO_CONTENT = {
   eyebrow: "Tecnologia sob medida para o seu nicho",
   titleLines: ["Do seu nicho,", "para o seu sucesso."],
   subtitle: "Estratégia, design e desenvolvimento num só lugar, do briefing ao lançamento.",
-  cta: "Venha nos conhecer",
-  secondaryCta: "Fale com a gente",
+  cta: "Fale com a gente",
 };
 
 export const FEATURES_CONTENT = {

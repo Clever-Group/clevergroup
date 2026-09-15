@@ -112,10 +112,12 @@ export const Contact = () => {
             type="submit"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="flex h-12 w-full items-center justify-center gap-2 self-start rounded-lg bg-brand-blue px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-blue/90 sm:w-auto"
+            className="group flex h-12 w-full items-center justify-center self-start rounded-lg bg-brand-blue px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-blue/90 sm:w-auto"
           >
             {CONTACT_FORM_CONTENT.submitCta}
-            <FaArrowRight className="h-3 w-3" />
+            <span className="ml-0 w-0 overflow-hidden opacity-0 transition-all duration-200 group-hover:ml-2 group-hover:w-3 group-hover:opacity-100">
+              <FaArrowRight className="h-3 w-3" />
+            </span>
           </MotionButton>
 
           <AnimatePresence>

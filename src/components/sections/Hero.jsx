@@ -78,24 +78,18 @@ export const Hero = () => {
             <MotionButton
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-blue/90 sm:w-auto"
-            >
-              {HERO_CONTENT.cta}
-              <FaArrowRight className="h-3 w-3" />
-            </MotionButton>
-
-            <button
-              type="button"
               onClick={() =>
                 document
                   .getElementById("contato")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="flex h-12 items-center justify-center gap-1.5 px-2 font-sans text-sm font-medium text-white/70 transition-colors hover:text-white"
+              className="group flex h-12 w-full items-center justify-center rounded-lg bg-brand-blue px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-blue/90 sm:w-auto"
             >
-              {HERO_CONTENT.secondaryCta}
-              <FaArrowRight className="h-3 w-3" />
-            </button>
+              {HERO_CONTENT.cta}
+              <span className="ml-0 w-0 overflow-hidden opacity-0 transition-all duration-200 group-hover:ml-2 group-hover:w-3 group-hover:opacity-100">
+                <FaArrowRight className="h-3 w-3" />
+              </span>
+            </MotionButton>
           </motion.div>
         </motion.div>
       </Velaris>
