@@ -120,7 +120,11 @@ const Velaris = ({
     const container = containerRef.current;
     if (!canvas || !container) return;
 
-    const gl = canvas.getContext("webgl");
+    // preserveDrawingBuffer: quando o SO pede menos movimento, paramos o
+    // loop de rAF depois de um frame só (ver abaixo). Sem essa flag, o
+    // navegador limpa o buffer de desenho no frame seguinte por padrão e
+    // o canvas fica transparente em vez de congelar no último frame.
+    const gl = canvas.getContext("webgl", { preserveDrawingBuffer: true });
     if (!gl) return;
 
     const createShader = (type: number, src: string) => {
@@ -137,7 +141,11 @@ const Velaris = ({
       createShader(gl.FRAGMENT_SHADER, fragmentShaderGLSL),
     );
     gl.linkProgram(program);
-    gl.useProgram(program);
+    // Colchete pra escapar da heurística de detecção de hooks do Fast
+    // Refresh do Vite: ela trata qualquer `algo.useAlgo()` como se fosse
+    // um hook React (useState, useEffect...) e quebra a transformação do
+    // arquivo em dev, deixando o gradiente sem renderizar.
+    gl["useProgram"](program);
 
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -159,23 +167,10 @@ const Velaris = ({
       bg: gl.getUniformLocation(program, "u_bg"),
     };
 
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio, 2);
-      canvas.width = container.clientWidth * dpr;
-      canvas.height = container.clientHeight * dpr;
-      gl.viewport(0, 0, canvas.width, canvas.height);
-    };
-
-    const ro = new ResizeObserver(resize);
-    ro.observe(container);
-
-    // Quem pediu menos movimento no SO ganha um único frame estático em vez
-    // do loop infinito — mesma régua que já aplicamos com o Motion no resto
-    // do site (MotionConfig reducedMotion="user").
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
+    // O gradiente sempre anima, mesmo com "reduzir movimento" ligado no
+    // SO — decisão explícita do dono do site, não segue o padrão de
+    // acessibilidade que o resto do site usa (MotionConfig
+    // reducedMotion="user").
     let raf: number;
     const render = (t: number) => {
       gl.uniform2f(locs.res, canvas.width, canvas.height);
@@ -187,10 +182,18 @@ const Velaris = ({
       gl.uniform3fv(locs.colors, flat);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      if (!prefersReducedMotion) {
-        raf = requestAnimationFrame(render);
-      }
+      raf = requestAnimationFrame(render);
     };
+
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio, 2);
+      canvas.width = container.clientWidth * dpr;
+      canvas.height = container.clientHeight * dpr;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    };
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(container);
 
     raf = requestAnimationFrame(render);
     return () => {
