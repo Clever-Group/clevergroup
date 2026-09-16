@@ -93,6 +93,10 @@ export const Hero = () => {
           </motion.div>
         </motion.div>
       </Velaris>
+
+      {/* funde a borda do canvas com o fundo sólido da próxima seção —
+          sem isso dá pra ver a transição do ruído do WebGL pro flat */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-dark to-transparent sm:h-56" />
     </section>
   );
 };
