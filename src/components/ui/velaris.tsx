@@ -65,12 +65,12 @@ void main() {
   float dist = length(p) * 1.5;
   float vignette = 1.0 - smoothstep(0.3, 1.2, dist);
 
-  col = mix(col, u_colors[0], smoothstep(-0.2, 0.5, n1) * 0.85);
-  col = mix(col, u_colors[1], smoothstep(-0.1, 0.6, n2) * 0.7);
+  col = mix(col, u_colors[0], smoothstep(-0.2, 0.5, n1) * 0.5);
+  col = mix(col, u_colors[1], smoothstep(-0.1, 0.6, n2) * 0.4);
   col = mix(col, u_colors[2], smoothstep(-0.3, 0.4, n3) * 0.6);
   col = mix(col, u_colors[3], smoothstep(0.0, 0.7, n1 * n2) * 0.5);
 
-  float glow = smoothstep(0.8, 0.0, dist) * 0.3;
+  float glow = smoothstep(0.8, 0.0, dist) * 0.15;
   col += u_colors[1] * glow;
 
   col = mix(col * 0.2, col, vignette);
